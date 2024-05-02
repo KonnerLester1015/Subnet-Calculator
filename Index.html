@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Subnet Calculator</title>
+
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.4.2/core.css">
+    <!-- CSS for Calculator -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- This script tag bootstraps PyScript -->
+    <script type="module" src="https://pyscript.net/releases/2024.4.2/core.js"></script>
+</head>
+<body>
+<div class="background">
+    <div class="container">
+    <div class="screen">
+    <div class="screen-body">
+        <div class="screen-body-item left">
+            <div class="app-title">
+            <span>SUBNET CALCULATOR</span>
+            <div class="screen-body-item">
+            <div class="app-form">
+            <div class="app-form-group">
+                <input class="app-form-control" type="text" id="hostIP" placeholder="Host IP Address">
+            </div>
+            <div class="app-form-group">
+                <input class="app-form-control" type="text" id="majorMask" placeholder="Major Network Mask">
+            </div>
+            <div class="app-form-group">
+                <input class="app-form-control" type="text" id="subnetMask" placeholder="Subnet Mask">
+            </div>
+            <div class="app-form-group">
+                <input class="app-form-control" type="text" id="nthSubnet" placeholder="nth Number of Usable Subnet">
+            </div>
+            <div class="app-subtitle">
+                <span>OPTIONS</span>
+            <div class="app-form-group app-form-control">
+                <input type="checkbox" id="yes_allZero" name="fav_language" value="yes_allZero">
+                <label for="yes_allZero">Is the all 0's subnet usable?</label>
+                <div>
+                <input type="checkbox" id="yes_allOnes" name="fav_language2" value="yes_allOnes">
+                <label for="yes_allOnes">Is the all 1's subnet usable?</label>    
+            </div>
+            </div>
+            <div class="app-form-group buttons">
+                <button class="app-form-button" py-click="calculate_subnet_info">SUBMIT</button>
+            </div>
+            </div>
+            </div>
+    <div id="output"></div>
+    <script type="py" src="./main.py" config="./pyscript.toml"></script>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
