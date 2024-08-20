@@ -53,6 +53,7 @@ def calculate_subnet_info(event):
     nthSubnet_input = document.querySelector("#nthSubnet")
     nthSubnet = nthSubnet_input.value
     nthSubnet = int(nthSubnet)
+    nthSubnet_initial = nthSubnet
 
     allZeros = document.querySelector("#yes_allZero").checked
     allOnes = document.querySelector("#yes_allOnes").checked
@@ -132,16 +133,16 @@ def calculate_subnet_info(event):
     if allZeros:
         nthSubnet = nthSubnet - 1
     
-    nthSubnetSuffix = get_ordinal(int(nthSubnet))
+    nthSubnetSuffix = get_ordinal(int(nthSubnet_initial))
     nthSubnetNetAddress = convertToBinary(subnetNetAddress).replace(".", "")[:-numSubnetBits][:-numHostBitsPerSubnet]
     addressfill = numSubnetBits - len(bin(nthSubnet)[2:])
     nthSubnetNetAddress = nthSubnetNetAddress + '0' * addressfill + bin(nthSubnet)[2:]
     nthSubnetNetAddress = nthSubnetNetAddress + '0' * (32 - len(nthSubnetNetAddress))
-    nthSubnetNetAddress_output = "\nNetwork Address of the " + str(nthSubnet) + nthSubnetSuffix + " usable subnet: " + convertToDecimal(add_periods(nthSubnetNetAddress))
+    nthSubnetNetAddress_output = "\nNetwork Address of the " + str(nthSubnet_initial) + nthSubnetSuffix + " usable subnet: " + convertToDecimal(add_periods(nthSubnetNetAddress))
 
     # Calculate the broadcast address of the nth usable subnet
     nthSubnetBroadcastAddress = add_periods(nthSubnetNetAddress)[:-numHostBitsPerSubnet] + '1' * numHostBitsPerSubnet
-    nthSubnetBroadcastAddress_output = "Broadcast Address of the  " + str(nthSubnet) + nthSubnetSuffix + " usable subnet: " + convertToDecimal(nthSubnetBroadcastAddress)
+    nthSubnetBroadcastAddress_output = "Broadcast Address of the  " + str(nthSubnet_initial) + nthSubnetSuffix + " usable subnet: " + convertToDecimal(nthSubnetBroadcastAddress)
 
     # Generate the output string
     output = "\n".join([majorNetAddress_output, majorNetBroadcastAddress_output, cidrNotation_output, numHostBits_output, numHosts_output, numSubnetBits_output, numSubnets_output, numHostBitsPerSubnet_output, numUsableHostsPerSubnet_output, subnetNetAddress_output, firstHostAddress_output, lastHostAddress_output, subnetBroadcastAddress_output, nthSubnetNetAddress_output, nthSubnetBroadcastAddress_output])

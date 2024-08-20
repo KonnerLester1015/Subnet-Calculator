@@ -9,7 +9,7 @@ body {
     font-size: 12px;
 }
 
-body, button, input {
+body, button, input, select {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: 1.4px;
@@ -44,7 +44,6 @@ body, button, input {
     box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
     z-index: -1;
 }
-
 
 .screen-body {
     display: flex;
@@ -102,7 +101,7 @@ body, button, input {
 
 .app-form-control {
     width: 100%;
-    padding: 12px;
+    padding: 8px;
     background: none;
     border: none;
     border-bottom: 1px solid #808080;
@@ -138,7 +137,6 @@ body, button, input {
     height: 20px;
     margin: 0 5px;
 }
-
 
 /* New styling for output */
 #output {
@@ -179,4 +177,132 @@ body, button, input {
     .screen-body-item {
         padding: 0;
     }
+}
+
+h1 {
+    margin: 50px 0;
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+}
+
+ul {
+    width: 620px;
+    margin: 0 auto;
+}
+
+ul li {
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+    position: relative;
+}
+
+ul li a {
+    font: 700 15px 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    color: #333333;
+    text-decoration: none;
+    border: 3px solid #000000;
+    letter-spacing: 1px;
+    padding: 10px 15px 10px 25px;
+    display: block;
+    width: 150px;
+    z-index: 5000;
+}
+
+ul li a i {
+    font-size: 12px !important;
+    position: absolute;
+    right: 10px;
+    top: 14px;
+}
+
+ul li .drop-down {
+    position: absolute;
+    padding: 0;
+    display: none;
+    margin: 0;
+    left: 0;
+    z-index: 0;
+}
+
+ul li .drop-down li {
+    position: relative;
+    float: none;
+}
+
+ul li .drop-down li a {
+    border-top: none;
+    width: 150px;
+}
+
+ul li .drop-down li a:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+ul li .drop-down li:nth-of-type(1) a {
+    border-top: none;
+}
+
+.accent {
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+.animate {
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.item:hover {
+    color: #ffffff;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Styling for dropdown fields */
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0; /* Add this line */
+    background: none;
+    border: none;
+    border-bottom: 1px solid #808080;
+    color: #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: border-color .2s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+select:focus {
+    border-bottom-color: #ddd;
+}
+
+select::placeholder {
+    color: #808080;
+}
+
+select option {
+    color: #000;
+    background: #fff;
+}
+option {
+    color: #825d5d; /* Change this to your desired color */
 }
